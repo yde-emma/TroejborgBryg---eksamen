@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>TrøjborgBryg</title>
+</head>
+
+<body>
+    <!--____________
+           HEADER
+    ______________-->
+    <header class="header">
+        <!-- LOGO -->
+        <a href="index.html" class="logo"><img src="img/Logo_lille.png" alt="TrøjborgBryg logo"></a>
+
+        <!-- MENU -->
+        <input class="menu-btn" type="checkbox" id="menu-btn">
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <!-- alkoholfri øl menupunkt -->
+            <li><a href="AF_oel.html">ALKOHOLFRI ØL</a>
+                <!-- submenuer - alkholfri øl -->
+                <ul class="submenu">
+                    <li><a href="julebryg.html">Julebryg</a></li>
+                    <li><a href="paeskebryg.html">Påskebryg</a></li>
+                    <li><a href="sommerbryg.html">Sommerbryg</a></li>
+                </ul>
+            </li>
+
+            <!-- øl menupunkt -->
+            <li><a href="vi_beklager.html">ØL</a>
+                <!-- submenuer - øl -->
+                <ul class="submenu">
+                    <li><a href="vi_beklager.html">IPA</a></li>
+                    <li><a href="vi_beklager.html">Stout</a></li>
+                    <li><a href="vi_beklager.html">Sour</a></li>
+                    <li><a href="vi_beklager.html">Lager</a></li>
+                </ul>
+            </li>
+
+
+            <!-- trøjborgbryg menupunkt -->
+            <li><a href="vi_beklager.html">TRØJBORGBRYG</a></li>
+
+            <!-- praktisk info menupunkt -->
+            <li><a href="vi_beklager.html">PRAKTISK INFO</a>
+                <!-- submenuer - praktisk info -->
+                <ul class="submenu">
+                    <li><a href="#aabningstider">Åbningstider</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#lokation">Lokation</a></li>
+                    <li><a href="#some">Sociale medier</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </header>
+    <main>
+        <!--___________________
+        PAASKEBRYG INDHOLD
+    _______________________-->
+        <!-- overskrift - sommerbryg -->
+        <img src="img/sommer_overskrift_desktop.png" alt="TrøjborgBryg Sommerbryg" class="overskrift_desktop">
+
+        <img src="img/TroejborgBryg_overskrift.png" alt="TrøjborgBryg" class="troejborgB_overskrift_bryg">
+        <h1 class="overskrift1_bryg">præsenterer årets alkoholfri Sommerbryg <br>- Til alle sommerens eventyr</h1>
+
+        <!-- infographic -->
+        <img src="img/sommer_infographic.png" alt="Inforgraphic om Sommerbryg" class="info_bryg_billede">
+
+        <!-- Flexbox - tekst + infographic -->
+        <div class="flexbox_container_bryg">
+            <div class="flexbox_item_bryg">
+                <p class="broedtekst_bryg info_tekst">I vores Sommerbryg, får du et nyt spin på en klassisk pilsner!
+                    <br>Om du befinder dig på stranden, i haven eller på festivalen, så er denne Sommerbryg
+                    lige noget for dig.
+                </p>
+                <p class="broedtekst_bryg info_tekst">Nyd de forfriskende, lette, sommersmage af hyldeblomst og citron.
+                </p>
+            </div>
+
+            <div class="flexbox_item_bryg">
+                <img src="img/sommer_oplevelse_info.png" alt="Inforgraphic om Sommerbryg" class="info_sommer_billede2">
+            </div>
+        </div>
+
+        <!-- Slut -->
+        <img src="img/sommerbryg_side.png" alt="Sommerøl og strand" class="slutbillede_sommer">
+
+        <p class="sluttekst_bryg">Lad TrøjborgBrygs Sommerbryg kaste dig ud i den dejlige danske sommer på et
+            splitsekund!
+        </p>
+    </main>
+
+    <!--______________
+       FOOTER
+    ________________-->
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h1 class="overskrifter_footer" id="kontakt">Kontakt</h1>
+                <p class="indhold_footer">Tlf: 00 00 00 00</p>
+                <p class="indhold_footer">Mail: troejBryg@gmail.com</p>
+            </div>
+            <div class="footer-column">
+                <h1 class="overskrifter_footer" id="lokation">Lokation</h1>
+                <p class="indhold_footer">Tordenskjoldsgade <br>8000 Aarhus N</p>
+            </div>
+            <div class="footer-column">
+                <h1 class="overskrifter_footer" id="aabningstider">Åbningstider</h1>
+                <p class="indhold_footer">Mandag-Onsdag: 13-21</p>
+                <p class="indhold_footer">Torsdag-Lørdag: 12-23</p>
+            </div>
+            <div class="footer-column">
+                <h1 class="overskrifter_footer" id="some">Sociale medier</h1>
+                <a href="https://www.facebook.com/?locale=da_DK" class="some_links indhold_footer">Facebook</a>
+                <a href="https://www.instagram.com/" class="some_links">Instagram</a>
+                <a href="https://www.tripadvisor.com/" class="some_links">Tripadvisor</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

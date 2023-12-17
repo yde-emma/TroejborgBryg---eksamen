@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>TrøjborgBryg</title>
+</head>
+
+<body>
+    <!--________________
+           HEADER
+    ___________________-->
+    <!-- REFERENCE: header fra a_BURGERMENU fil, fra lektion 5 - RWD case */ -->
+    <header class="header">
+        <!-- LOGO -->
+        <a href="index.html" class="logo"><img src="img/Logo_lille.png" alt="TrøjborgBryg logo"></a>
+
+        <!-- MENU -->
+        <input class="menu-btn" type="checkbox" id="menu-btn">
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <!-- alkoholfri øl menupunkt -->
+            <li><a href="AF_oel.html">ALKOHOLFRI ØL</a>
+                <!-- submenuer - alkholfri øl -->
+                <ul class="submenu">
+                    <li><a href="julebryg.html">Julebryg</a></li>
+                    <li><a href="paeskebryg.html">Påskebryg</a></li>
+                    <li><a href="sommerbryg.html">Sommerbryg</a></li>
+                </ul>
+            </li>
+
+            <!-- øl menupunkt -->
+            <li><a href="vi_beklager.html">ØL</a>
+                <!-- submenuer - øl -->
+                <ul class="submenu">
+                    <li><a href="vi_beklager.html">IPA</a></li>
+                    <li><a href="vi_beklager.html">Stout</a></li>
+                    <li><a href="vi_beklager.html">Sour</a></li>
+                    <li><a href="vi_beklager.html">Lager</a></li>
+                </ul>
+            </li>
+
+
+            <!-- trøjborgbryg menupunkt -->
+            <li><a href="vi_beklager.html">TRØJBORGBRYG</a></li>
+
+            <!-- praktisk info menupunkt -->
+            <li><a href="vi_beklager.html">PRAKTISK INFO</a>
+                <!-- submenuer - praktisk info -->
+                <ul class="submenu">
+                    <li><a href="#aabningstider">Åbningstider</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#lokation">Lokation</a></li>
+                    <li><a href="#some">Sociale medier</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </header>
+    <main>
+        <!--_____________________
+          FORSIDE INDHOLD
+    _________________________-->
+        <!-- forside billede - mobil -->
+        <a href="julebryg.html"><img src="img/forside_nyhed.jpg" alt="juleøl i sne" class="forside_billede"></a>
+
+        <!-- forside billede - desktop -->
+        <a href="julebryg.html"><img src="img/forside_nyhed_bred.jpg" alt="juleøl i sne"
+                class="forside_billede_desktop"></a>
+
+        <!-- slogan - mobil -->
+        <img src="img/slogang-mobil.png" alt="TrøjborgBryg slogan" class="slogan_mobil">
+
+        <!-- slogan desktop-->
+        <img src="img/slogan-desktop.png" alt="TrøjborgBryg slogan" class="slogan_desktop">
+
+        <div class="flexbox_container_forside">
+            <div class="flexbox_content_forside"><img src="img/samvaer.jpg" alt="piger drikker øl"
+                    id="samvaer_billede_forside"></div>
+
+            <div class="flexbox_content_forside"><img src="img/troejborg_cykel.jpg" alt="Trøjborg cykel"
+                    id="troejborg_cykel_billede_forside">
+            </div>
+        </div>
+
+        <!-- TEKSTBOKS -->
+        <div class="tekstboks_container_forside">
+            <div class="tekstboks_forside">
+                <div class="forside_boks-row">
+                    <div class="tekstboks_content_forside">
+                        <p class="tekstboks_tekst_forside">
+                            I år har vi lagt et stort fokus på udviklingen af vores alkoholfri øl.
+                        </p>
+
+                        <p class="tekstboks_tekst_forside">
+                            Derfor har vi i år lanceret en ny linje af alkoholfri øl, som er det ULTIMATIVE valg til
+                            alle
+                            sæsonernes begivenheder
+                        </p>
+
+                        <a href="AF_oel.html" id="link_forside">Læs mere om alkoholfri øl her</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AF ØL VARIANTER -->
+        <h2 id="AF_varianter_overskrift">Tjek vores alkoholfri øl ud</h2>
+
+        <div class="varianter_container">
+            <div class="varianter_item">
+                <a href="julebryg.html">
+                    <img src="img/jul_hover.jpg" alt="TrøjborgBryg Julebryg" class="oel_varianter">
+                </a>
+            </div>
+
+            <div class="varianter_item">
+                <a href="paeskebryg.html">
+                    <img src="img/paaske_hover.jpg" alt="TrøjborgBryg Påskebryg" class="oel_varianter">
+                </a>
+            </div>
+
+            <div class="varianter_item">
+                <a href="sommerbryg.html">
+                    <img src="img/sommer_hover.jpg" alt="TrøjborgBryg Sommerbryg" class="oel_varianter">
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!--________________
+       FOOTER
+___________________-->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h1 class="overskrifter_footer" id="kontakt">Kontakt</h1>
+                <p class="indhold_footer">Tlf: 00 00 00 00</p>
+                <p class="indhold_footer">Mail: troejBryg@gmail.com</p>
+            </div>
+            <div class="footer-column">
+                <h1 class="overskrifter_footer" id="lokation">Lokation</h1>
+                <p class="indhold_footer">Tordenskjoldsgade <br>8000 Aarhus N</p>
+            </div>
+            <div class="footer-column">
+                <h1 class="overskrifter_footer" id="aabningstider">Åbningstider</h1>
+                <p class="indhold_footer">Mandag-Onsdag: 13-21</p>
+                <p class="indhold_footer">Torsdag-Lørdag: 12-23</p>
+            </div>
+            <div class="footer-column">
+                <h1 class="overskrifter_footer" id="some">Sociale medier</h1>
+                <a href="https://www.facebook.com/?locale=da_DK" class="some_links indhold_footer">Facebook</a>
+                <a href="https://www.instagram.com/" class="some_links">Instagram</a>
+                <a href="https://www.tripadvisor.com/" class="some_links">Tripadvisor</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

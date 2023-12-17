@@ -1,0 +1,1207 @@
+
+/* ---------------------------------
+
+            RESET START 
+
+--------------------------------- */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ---------------------------------
+
+            RESET SLUT 
+
+--------------------------------- */
+
+
+/* ---------------------------------
+
+             VARIABLES
+
+--------------------------------- */
+:root{
+  --primary: rgb(236, 228, 214);
+  --secondary: rgba(22, 39, 77, 0.924);
+  --tertiary: rgb(175, 207, 226);
+}
+
+
+/* ---------------------------------
+
+               BODY 
+
+--------------------------------- */
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  background-color:var(--primary);
+}
+
+/* styling af a href tags/menupunkter */
+a {
+  color:rgb(8, 8, 30);
+}
+main{
+   /*indsæt og styling af baggrundsbillede */
+  background-image: url(img/kobber_skraa.png);
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+
+
+/* ---------------------------------
+
+          HEADER START 
+
+--------------------------------- */
+/* REFERENCE: header fra a_BURGERMENU fil, fra lektion 5 - RWD case */
+.header {
+  background-color:var(--primary);
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed; /* gør at headeren bliver i toppen når man scroller ned */ 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: rgb(236, 228, 214);
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid rgb(236, 228, 214);
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+/* hover farve */
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: var(--tertiary);
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.logo{
+  margin-top: 6%;
+  margin-left: 16%;
+}
+
+/* menu */
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon = burgermenu icon */
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 20% 20%;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu button */
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* Submenu styles */
+.header .submenu {
+display: none;
+position: absolute;
+background-color: rgb(171, 155, 126);
+box-shadow: 0 2px 5px rgba(0,0,0,.1);
+z-index: 100;
+}
+
+.header .submenu li {
+display: block;
+border-bottom: 1px solid var(--secondary);
+}
+
+.header .submenu li:last-child {
+border-bottom: none;
+}
+
+.header .submenu a {
+padding: 10px 20px;
+background-color:var(--primary);
+color: var(--secondary);
+border: 0.5px solid var(--secondary);
+}
+
+/* Display submenu ved hover på mobil */
+.header li:hover .submenu {
+display: block;
+}
+/* ---------------------------------
+
+          HEADER SLUT 
+
+--------------------------------- */
+
+/* ---------------------------------
+
+        FORSIDE START
+
+--------------------------------- */
+/* reklame billede øverst - forside */
+.forside_billede {
+  margin-top: 40%;
+  max-width: 100%;
+}
+
+.forside_billede_desktop{
+  display: none;
+}
+
+.slogan_mobil{
+  max-width: 55%;
+  margin-left: 25%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+.slogan_desktop{
+  display: none;
+}
+
+/* 2x billeder - forside */
+.flexbox_container_forside{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+#samvaer_billede_forside{
+  max-width: 150%;
+  overflow: hidden;
+}
+
+#troejborg_cykel_billede_forside{
+  max-width: 100%;
+}
+
+/* Flexbox - Tekstboks - forside */
+.tekstboks_container_forside {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3%;
+}
+.tekstboks_forside {
+  flex: 1; 
+  max-width: 70%; 
+  border: 4px solid rgb(68, 154, 208);
+  border-radius: 2px;
+  padding: 7%;
+  margin: 4%;
+  background-color: rgba(175, 213, 234, 0.5);
+}
+.tekstboks_content_forside {
+  text-align: center;
+}
+
+.tekstboks_tekst_forside{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25em;
+  color: var(--secondary);
+  margin-top: 2%;
+  margin-bottom: 5%;
+  line-height: 140%;
+}
+
+#link_forside{
+  font-size: 1.25em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+/* flexbox - øl varianter - forside */
+#AF_varianter_overskrift{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--secondary);
+  text-align: center;
+  margin-top: 8%;
+  margin-bottom: 3%;
+}
+.varianter_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.varianter_item {
+  text-align: center;
+}
+
+.oel_varianter {
+  max-width: 55%;
+  border: 2px solid var(--secondary);
+  margin: 2%;
+  transition: opacity 0.3s ease; 
+  margin-bottom: 5%;
+}
+
+/* Hover effekt oel varianter */
+.oel_varianter:hover {
+  opacity: 0.5; 
+}
+/* ---------------------------------
+
+          FORSIDE SLUT 
+
+--------------------------------- */
+
+/* -------------------------------------
+
+     AF øl - UNDERSIDE - START 
+
+---------------------------------------- */
+.overskrift_AFoel1{
+  margin-top: 48%;
+  margin-left: 8%;
+  max-width: 85%;
+}
+
+.broedtekst_AF{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.15em;
+  color: var(--secondary);
+  line-height: 190%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+/* Flexbox 1 - AF øl underside */ 
+.flexbox_container_AF{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.billede_1_AF_underside{
+  max-width: 60%;
+  margin-left: 20%;
+  margin-bottom: 12%;
+}
+
+.overskrift_AFoel_2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--secondary);
+  margin-left: 11%;
+  margin-bottom: 2%;
+}
+
+/* ----- Flexbox - tekstboks 1 - AF øl underside ----- */
+.tekstboks-container_AF1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tekst-boks_AF1 {
+  flex: 1; 
+  max-width: 75%; 
+  border: 5px solid var(--tertiary);
+  border-radius: 5px;
+  padding: 1%;
+  margin: 2%;
+  background-color:rgba(22, 39, 77, 0.9);
+}
+.liste_AF1{
+  color: var(--primary);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  margin-left: 6%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  line-height: 350%;
+  list-style-type: circle;
+}
+
+/* TrøjborgBryg - respekt for naturen - AF øl */
+.overskrift_AFoel3{
+  max-width: 80%;
+  margin-left: 10%;
+  margin-top: 8%;
+}
+
+.flexbox_container_AF2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.paaske_oppe_billeder_AF{
+  max-width: 70%;
+  margin-left: 15%;
+  margin-bottom: 4%;
+}
+
+.frost_billede_AF{
+  display: none;
+}
+
+/* ----- Flexbox - tekstboks 2 - AF øl underside ----- */
+.tekstboks-container_AF2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tekst-boks_AF2 {
+  flex: 1; 
+  max-width: 85%; 
+  border: 3px solid var(--secondary);
+  border-radius: 3px;
+  padding: 1%;
+  margin: 2%;
+  background-color:var(--primary);
+}
+
+.tekstboks2_tekst_AF{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.15em;
+  color: var(--secondary);
+  line-height: 190%;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
+.tekstboks2_overskrift_AF{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.15em;
+  font-weight: bold;
+  font-style: oblique;
+  color: var(--secondary);
+  line-height: 190%;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 8%;
+}
+
+.liste_AF2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.15em;
+  list-style-type: circle;
+  font-style: oblique;
+  color: var(--secondary);
+  line-height: 250%;
+  margin-left: 15%;
+  margin-right: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+/* Slut tekst - AF øl */
+.slut_overskrift_AF{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--secondary);
+  margin-left: 13%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.slut_tekst_AF{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.15em;
+  font-style: oblique;
+  color: var(--secondary);
+  line-height: 190%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  margin-left: 11%;
+  margin-right: 11%;
+}
+
+/* Slut billede - AF øl */
+.samvaer_billede2_AF{
+  max-width: 100%;
+}
+
+/* -------------------------------------
+
+     AF øl - UNDERSIDE - SLUT 
+
+---------------------------------------- */ 
+
+
+/* -------------------------------------
+
+       Bryg - UNDERSIDER - START 
+
+---------------------------------------- */
+.broedtekst_bryg{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.15em;
+  color: var(--secondary);
+  line-height: 190%;
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 3%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+/* overskrift - julebryg */
+.troejborgB_overskrift_bryg{
+  max-width: 50%;
+  margin-top: 42%;
+  margin-left: 25%;
+}
+
+.overskrift1_bryg{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.50em;
+  font-weight: bold;
+  font-style: oblique;
+  line-height: 150%;
+  color: var(--secondary);
+  margin-top: -4%;
+  margin-bottom: 5%;
+}
+
+.overskrift_desktop{
+  display: none;
+}
+
+/* infographic */
+.info_bryg_billede{
+  max-width: 100%;
+}
+
+/* FLEXBOX - tekst + oplevelses infographic */
+.flexbox_container_bryg{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sluttekst_bryg{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  font-style: oblique;
+  color: var(--secondary);
+  text-align: center;
+  line-height: 190%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* SÆRLIGT - JULEBRYG */
+.info_jul_billede2{
+  max-width: 60%;
+  margin-left: 20%;
+  margin-bottom: 3%;
+}
+.slutbillede_jul{
+  max-width: 100%;
+  margin-top: 5%;
+}
+
+/* SÆRLIGT - PÅSKEBRYG */
+.info_paaske_billede2{
+  max-width: 70%;
+  margin-left: 16%;
+  margin-bottom: 3%;
+}
+.slutbillede_paaske{
+  max-width: 100%;
+  margin-top: 3%;
+}
+
+/* SÆRLGT - SOMMERBRYG */
+.info_sommer_billede2{
+  max-width: 60%;
+  margin-left: 20%;
+  margin-bottom: 3%;
+}
+.slutbillede_sommer{
+  max-width: 100%;
+  margin-top: 3%;
+}
+/* -------------------------------------
+
+     BRYG - UNDERSIDE - SLUT 
+
+---------------------------------------- */ 
+
+
+/* -------------------------------------
+
+     VI BEKLAGER - UNDERSIDE - START 
+
+---------------------------------------- */
+.main_vi_beklager{
+  padding-top: 300px;
+  padding-bottom: 100px;
+  /*indsæt og styling af baggrundsbillede */
+  background-image: url(img/troejborg_baggrund.png);
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+
+.overskrift_vi_beklager{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: rgb(49, 65, 99);
+  text-align: center;
+  margin-bottom: 4.5%;
+}
+
+.tekst_ombygning{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  color: var(--secondary);
+  text-align: center;
+  margin-bottom: 4%;
+}
+
+.link_ombygning{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(49, 65, 99);
+  margin-left: 24%;
+}
+
+/* -------------------------------------
+
+     VI BEKLAGER - UNDERSIDE - SLUT 
+
+---------------------------------------- */
+
+/* ---------------------------------
+
+          FOOTER START 
+
+--------------------------------- */
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary);  
+  color: var(--secondary);   
+  padding: 60px 0;           
+  margin-top: 0%;  
+   /* indæt og styling af baggrund i footer */       
+  background-image: url('img/kobber_40opacity.jpg'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+
+.footer-content {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-column {
+  text-align: center;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  flex: 0 1 100%;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* styling af overskrifter i footer */
+.overskrifter_footer {
+  font-size: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 3%;
+}
+
+/* styling af skrift i footer */
+.indhold_footer {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+/* styling af SoMe links */ 
+.some_links {
+  color: var(--secondary);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 1%;
+}
+/* ---------------------------------
+
+          FOOTER SLUT 
+
+--------------------------------- */
+
+
+/* ---------------------------------
+
+       MEDIA QUERIES START
+
+--------------------------------- */
+/* --- Media q desktop ---- */
+@media (min-width: 960px) {
+
+/* ------------------------
+    HEADER START - desktop
+ --------------------------*/
+  .header li {
+    float: left; /* gør at menupunkterne står fra ventre t. højre  */
+  }
+
+  /* styling af menupunkter - desktop */
+  .header li a {
+    padding: 80px 85px;
+    font-size: 1.25em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--secondary);
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+
+  .header{
+    border-bottom: 0.2em solid var(--secondary);
+  }
+
+  /* skjuler burgermenu ikonet */
+  .header .menu-icon {
+    display: none;
+  }
+
+  .logo{
+    margin-left: 3%;
+    margin-top: 1%;
+  }
+
+  /* Style for submenus */
+.header .submenu {
+  display: none;
+  position: absolute;
+  background-color: rgb(171, 155, 126);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  flex-direction: column; 
+  padding: 0; 
+}
+
+.header .submenu li {
+  display: block;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.header .submenu li:last-child {
+  border-bottom: none;
+}
+
+.header .submenu a {
+  padding: 10px 20px;
+  color: #333;
+}
+
+/* Display submenu ved hover  */
+.header li:hover .submenu {
+  display: flex; 
+  flex-direction: column; 
+  position: absolute;
+}
+/* ------------------------
+    HEADER SLUT - desktop
+ --------------------------*/
+
+/* -------------------------
+   FORSIDE START - desktop
+----------------------------*/
+/* forside reklame billede */
+.forside_billede{
+  display: none;
+}
+
+.forside_billede_desktop{
+  display: inline;
+  margin-top: 14%;
+  margin-left: 20%;
+  border: 5px solid var(--tertiary);
+  max-width: 60%;
+  overflow: hidden;
+}
+
+/* slogang styling */ 
+.slogan_mobil{
+  display: none;
+}
+
+.slogan_desktop{
+  display: inline;
+  max-width: 60%;
+  margin-left: 22%;
+  margin-top: -1%;
+}
+
+/* 2x billeder - forside */
+.flexbox_container_forside{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+#samvaer_billede_forside{
+  max-width: 90%;
+  overflow: hidden;
+  margin-left: 22%;
+}
+
+#troejborg_cykel_billede_forside{
+  max-width: 60%;
+  margin-left: 18%;
+}
+
+/* tekstboks - forside */
+.tekstboks_container_forside {
+  margin-top: 1%;
+}
+.tekstboks_forside {
+  max-width: 40%; 
+}
+
+.tekstboks_tekst_forside{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  color: var(--secondary);
+  margin-top: 2%;
+  margin-bottom: 3%;
+  line-height: 140%;
+}
+
+#link_forside{
+  font-size: 1.5em;
+}
+
+/* AF øl varianter */ 
+#AF_varianter_overskrift{
+  font-size: 2em;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.varianter_item {
+  flex: 1 0 30%; 
+  margin: 1%; 
+}
+
+.oel_varianter {
+  width: 100%; 
+  margin-bottom: 8%; 
+}
+/* -------------------------
+   FORSIDE SLUT - desktop
+----------------------------*/
+
+/* -----------------------------------------
+  ALKOHOLFRI ØL START - UNDERSIDE - desktop
+--------------------------------------------*/
+.overskrift_AFoel1{
+  margin-top: 15%;
+  margin-left: 25%;
+  max-width: 50%;
+}
+
+.broedtekst_AF{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+  color: var(--secondary);
+  line-height: 190%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  margin-left: 25%;
+  margin-right: 15%;
+}
+
+/* styling af flexbox1 */
+.flexbox_container_AF{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.billede_1_AF_underside{
+  max-width: 55%;
+  margin-left: 15%;
+  margin-bottom: 12%;
+}
+
+/* Tekstboks 1/flexbox 1 */
+.overskrift_AFoel_2{
+  font-size: 1.75em;;
+  margin-left: 32%;
+  margin-bottom: 2%;
+}
+
+.tekst-boks_AF1 {
+  flex: 1; 
+  max-width: 45%; 
+  border: 8px solid var(--tertiary);
+  padding: 1%;
+}
+.liste_AF1{
+  font-size: 1.25em;
+  margin-left: 17%;
+}
+
+/* TrøjborgBryg - respekt for naturen - AF øl */
+.overskrift_AFoel3{
+  max-width: 50%;
+  margin-left: 25%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.natur_tekst_AF{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25em;
+  color: var(--secondary);
+  line-height: 190%;
+  margin-bottom: 3%;
+  margin-top: -2%;
+  margin-left: 30%;
+  margin-right: 0%;
+}
+
+.flexbox_container_AF2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.paaske_oppe_billeder_AF{
+  display: none;
+}
+
+.frost_billede_AF{
+  display: inline;
+  max-width: 45%;
+  margin-left: 30%;
+}
+
+/* Flexbox - tekstboks 2 - AF øl underside */
+.tekst-boks_AF2 {
+  max-width: 65%; 
+  border: 4px solid var(--secondary);
+}
+
+.tekstboks2_tekst_AF{
+  font-size: 1.25em;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 2%;
+}
+
+.tekstboks2_overskrift_AF{
+  font-size: 1.3em;
+  margin-top: 5%;
+}
+
+.liste_AF2{
+  font-size: 1.25em;
+  margin-left: 20%;
+}
+
+/* Slut tekst - AF øl */
+.slut_overskrift_AF{
+  font-size:2em;
+  margin-left: 35%;
+  margin-bottom: 3%;
+}
+
+.slut_tekst_AF{
+  font-size: 1.25em;
+  font-style: oblique;
+  color: var(--secondary);
+  line-height: 120%;
+  margin-bottom: 3%;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+}
+
+/* Slut billede - AF øl */
+.samvaer_billede2_AF{
+  max-width: 50%;
+  margin-left: 25%;
+  margin-bottom: 3%;
+}
+
+/* -----------------------------------------
+  ALKOHOLFRI ØL SLUT - UNDERSIDE - desktop
+--------------------------------------------*/
+
+/* -----------------------------------------
+  BRYG START - UNDERSIDER - desktop
+--------------------------------------------*/
+.broedtekst_bryg{
+  font-size: 1.5em;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+/* overskrift - julebryg */
+.troejborgB_overskrift_bryg{
+  display: none;
+}
+
+.overskrift1_bryg{
+ display: none;
+}
+
+.overskrift_desktop{
+  display: inline;
+  margin-top: 15%;
+  margin-left: 20%;
+  max-width: 100%;
+}
+
+/* infographic */
+.info_bryg_billede{
+  max-width: 50%;
+  margin-left: 23%;
+}
+
+/* FLEXBOX - tekst + infographic */
+.flexbox_container_bryg{
+  flex-direction: row;
+}
+
+.flexbox_item_bryg{
+  margin-top: 8%;
+}
+
+.info_tekst{
+  margin-left: 20%;
+  margin-right: 30%;
+}
+
+.sluttekst_bryg{
+  font-size: 2em;
+}
+
+/* SÆRLIGT - JUL */
+.info_jul_billede2{
+  max-width: 72%;
+  margin-left: 0%;
+}
+
+.slutbillede_jul{
+  max-width: 60%;
+  margin-top: 0%;
+  margin-left: 20%;
+}
+
+/* SÆRLIGT - PÅSKE */
+.info_paaske_billede2{
+  max-width: 72%;
+  margin-left: 0%;
+  margin-top: 10%;
+}
+
+.slutbillede_paaske{
+  max-width: 60%;
+  margin-top: 0%;
+  margin-left: 20%;
+}
+
+/* SÆRLIGT - SOMMER */
+.info_sommer_billede2{
+  max-width: 60%;
+  margin-left: 0%;
+  margin-bottom: 10%;
+}
+
+.slutbillede_sommer{
+  max-width: 80%;
+  margin-top: 5%;
+  margin-left:25%;
+}
+¢
+/* -----------------------------------------
+  BRYG SLUT - UNDERSIDE - desktop
+--------------------------------------------*/
+
+/* ---------------------------------------
+     VI BEKLAGER START - UNDERSIDE - desktop
+----------------------------------------*/
+.overskrift_vi_beklager{
+  font-size: 3em;
+  margin-bottom: 2.5%;
+}
+
+.tekst_ombygning{
+  font-size: 1.75em;
+  margin-bottom: 2%;
+}
+
+.link_ombygning{
+  font-size: 1.75em;
+  margin-left: 40%;
+}
+/* ---------------------------------------
+     VI BEKLAGER SLUT - UNDERSIDE - desktop
+----------------------------------------*/
+/* ----------------------------
+    FOOTER START - desktop
+------------------------------*/
+/* ---- Styling af FOOTER ---- */
+.footer-column {
+  flex: 0 1 23%; /* 4 columns til dekstop */
+  }
+}
+
+@media (max-width: 959px) {
+  .footer-column {
+    flex: 0 1 100%; /* en column til mobil */
+  }
+}
+/* ---------------------------------
+       MEDIA QUERIES SLUT
+--------------------------------- */

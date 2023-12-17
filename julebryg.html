@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>TrøjborgBryg</title>
+</head>
+
+<body>
+    <!--_______________
+           HEADER
+    __________________-->
+    <header class="header">
+        <!-- LOGO -->
+        <a href="index.html" class="logo"><img src="img/Logo_lille.png" alt="TrøjborgBryg logo"></a>
+
+        <!-- MENU -->
+        <input class="menu-btn" type="checkbox" id="menu-btn">
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <!-- alkoholfri øl menupunkt -->
+            <li><a href="AF_oel.html">ALKOHOLFRI ØL</a>
+                <!-- submenuer - alkholfri øl -->
+                <ul class="submenu">
+                    <li><a href="julebryg.html">Julebryg</a></li>
+                    <li><a href="paeskebryg.html">Påskebryg</a></li>
+                    <li><a href="sommerbryg.html">Sommerbryg</a></li>
+                </ul>
+            </li>
+
+            <!-- øl menupunkt -->
+            <li><a href="vi_beklager.html">ØL</a>
+                <!-- submenuer - øl -->
+                <ul class="submenu">
+                    <li><a href="vi_beklager.html">IPA</a></li>
+                    <li><a href="vi_beklager.html">Stout</a></li>
+                    <li><a href="vi_beklager.html">Sour</a></li>
+                    <li><a href="vi_beklager.html">Lager</a></li>
+                </ul>
+            </li>
+
+
+            <!-- trøjborgbryg menupunkt -->
+            <li><a href="vi_beklager.html">TRØJBORGBRYG</a></li>
+
+            <!-- praktisk info menupunkt -->
+            <li><a href="vi_beklager.html">PRAKTISK INFO</a>
+                <!-- submenuer - praktisk info -->
+                <ul class="submenu">
+                    <li><a href="#aabningstider">Åbningstider</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#lokation">Lokation</a></li>
+                    <li><a href="#some">Sociale medier</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </header>
+    <main>
+        <!--_____________________
+        JULEBRYG INDHOLD
+    ________________________-->
+        <!-- overskrift - julebryg -->
+        <img src="img/jul_overskrift_desktop.png" alt="TrøjborgBryg Julebryg" class="overskrift_desktop">
+
+        <img src="img/TroejborgBryg_overskrift.png" alt="TrøjborgBryg" class="troejborgB_overskrift_bryg">
+        <h1 class="overskrift1_bryg">præsenterer årets alkoholfri Julebryg <br>- Til alle julens strabadser!</h1>
+
+        <!-- infographic -->
+        <img src="img/jule_infographic.png" alt="Inforgraphic om Julebryg" class="info_bryg_billede">
+
+        <!-- Flexbox - tekst + infographic -->
+        <div class="flexbox_container_bryg">
+            <div class="flexbox_item_bryg">
+                <p class="broedtekst_bryg info_tekst">I denne øl får du en middelmørk øl, med en let duft af appelsinens
+                    og
+                    maltens
+                    sødme.</p>
+                <p class="broedtekst_bryg info_tekst">Når du kommer tættere på og smager på herligheden, møder en let
+                    bitter
+                    smag af
+                    grannåle og humle din
+                    tunge.</p>
+            </div>
+
+            <div class="flexbox_item_bryg">
+                <img src="img/jul_oplevelse_info.png" alt="Inforgraphic om Julebryg" class="info_jul_billede2">
+            </div>
+        </div>
+
+        <!-- Slut -->
+        <p class="broedtekst_bryg">Denne øl er perfekt til årets julemiddage, julefrokoster eller bare som en lækker og
+            hyggelig tilføjelse i hverdagen</p>
+
+        <img src="img/julebryg_side.png" alt="Juleøl og frost" class="slutbillede_jul">
+
+        <p class="sluttekst_bryg">Så spænd dig fast til et brag af en juleøl, som får dig sikkert og glad igennem
+            vinteren!
+        </p>
+    </main>
+
+    <!--________________
+       FOOTER
+    ___________________-->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h1 class="overskrifter_footer" id="kontakt">Kontakt</h1>
+                <p class="indhold_footer">Tlf: 00 00 00 00</p>
+                <p class="indhold_footer">Mail: troejBryg@gmail.com</p>
+            </div>
+            <div class="footer-column">
+                <h1 class="overskrifter_footer" id="lokation">Lokation</h1>
+                <p class="indhold_footer">Tordenskjoldsgade <br>8000 Aarhus N</p>
+            </div>
+            <div class="footer-column">
+                <h1 class="overskrifter_footer" id="aabningstider">Åbningstider</h1>
+                <p class="indhold_footer">Mandag-Onsdag: 13-21</p>
+                <p class="indhold_footer">Torsdag-Lørdag: 12-23</p>
+            </div>
+            <div class="footer-column">
+                <h1 class="overskrifter_footer" id="some">Sociale medier</h1>
+                <a href="https://www.facebook.com/?locale=da_DK" class="some_links indhold_footer">Facebook</a>
+                <a href="https://www.instagram.com/" class="some_links">Instagram</a>
+                <a href="https://www.tripadvisor.com/" class="some_links">Tripadvisor</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
